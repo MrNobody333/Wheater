@@ -1,0 +1,55 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font: 24px Arial, sans-serif;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+table {
+  max-width: 500px;
+  width: 100%;
+  border: 2px dotted black;
+  border-collapse: collapse;
+}
+
+table tr {
+  height: 40px;
+}
+
+thead th {
+  font-weight: normal;
+}
+
+table td {
+  padding-right: 5px;
+  border: 2px dotted #000000;
+  width: 25%;
+  text-align: right;
+}
+
+table td:nth-child(2) {
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  color: #b7b7b7;
+}
+
+table td:last-child {
+  padding-left: 5px;
+  text-align: left;
+}
+
+thead tr:first-of-type {
+  border: 2px solid black;
+}
