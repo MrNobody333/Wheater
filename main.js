@@ -1,4 +1,4 @@
-fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=temperature_2m_max&timezone=Europe%2FMoscow&forecast_days=14')
+fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&daily=temperature_2m_min&timezone=Europe%2FMoscow&forecast_days=14')
   .then(response => response.json())
   .then(data => {
     const formattedDate = data.daily.time.map(el => {
@@ -7,7 +7,7 @@ fetch('https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&dai
       const day = date.getDate().toString().padStart(2, 0);
       return `${day}.${mounth}`;
     });
-    let temperature = data.daily.temperature_2m_max.map(el => {
+    let temperature = data.daily.temperature_2m_min.map(el => {
       return el > 0 ? `+${el.toFixed()}` : `${el.toFixed()}`;
     });
     addingDataTable(formattedDate, temperature);
